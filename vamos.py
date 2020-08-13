@@ -1,4 +1,4 @@
-'''Zoom In 
+''' AutoZoom
 For Ariano students in eleven grade
 This code is a work of __Arturo David Rebolledo Rosenstiehl__  
 is prohibited all comercial trades with this software
