@@ -43,7 +43,7 @@ class Clases:
 matematicas1 = Clases(1, '07:28_AM', 'Angelly', 'Matematicas', 'https://us04web.zoom.us/j/5628790956?pwd=eDd3ZDFSODR0VnJrVzRFbEIzQ3h5QT09')
 fisica3 = Clases(1, '08:53_AM', 'Pajon', 'Fisica', 'https://us04web.zoom.us/j/5609210902?pwd=eTA3MzQrZlNwZzVBblJ3SURlL3B6UT09') 
 comprension_lectora = Clases(1, '09:53_AM', 'Elis', 'Compresión Lectora', 'https://us04web.zoom.us/j/6746001313?pwd=dmJGSDc2UjZ1QUM5czZ5MHYyUHB0Zz09')
-ingles1 = Clases(1, '10:33_AM', 'Jean Carlos', 'Ingles', 'https://us04web.zoom.us/j/9181948143?pwd=SThwOERFcjNYM01yV3lkNXhKSVU3QT09')
+ingles1 = Clases(1, '10:33_AM', 'Jean Carlos', 'Ingles', 'https://www.c')
 c_sociales1 = Clases(1, '12:38_PM', 'Rodrigo', 'Ciencias Sociales', 'https://zoom.us/j/3265766637?pwd=MWFaNkEwbWxsMTEzN09GZGV1ZnMvdz09')
 #Martes
 quimica1 = Clases(2, '07:28_AM', 'Olidys', 'Quimica', 'https://us04web.zoom.us/j/4498293024?pwd=aGNIdVZSTUdsY2JaZFF4ckhCb29YQT09')
