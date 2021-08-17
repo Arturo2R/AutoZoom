@@ -8,17 +8,6 @@ import time
 import webbrowser
 import random
 
-#Saludo Inicial del día
-print('Iniciando App...')
-time.sleep(2)
-lindo_dia = ["Bonito día","Hermoso día que es hoy","Que hermosa mañana","Es inefable lo bello que es este día",
-            "Que Belleza de día, hay que aprovechar cada segundo de él", "Que hermoso día que Dios nos ha regalado, para que hobremos de magna manera",
-            "Que Buen día hace hoy", "Cada nuevo día es una nueva oportunidad para hacer félices a otros"]
-
-que_dia = random.choice(lindo_dia)
-hoy = datetime.datetime.now()
-hoy_es = hoy.strftime('%A')
-print(f'{que_dia}, hoy es {hoy_es}')
 
 def espera(a): #a:current b:weekday
     time.sleep(20)
@@ -26,27 +15,19 @@ def espera(a): #a:current b:weekday
 #Base De datos de las Materias
 class Materias:
     def __init__(self, day, horas, profesor, materia, id_reunion):
-        self.d = [1,2] #day
-        self.h = ['04:28_PM', '04:28_PM']#horas
+        self.d = day
+        self.h = horas
         self.p = profesor
         self.m = materia
-        self.i = ['80853948', '4383945']#id_reunion
+        self.i = id_reunion
         
-        # iterate trough days and create this object {dia: 1, hora: horas[1], link} per item
-        # for i, j in (len(self.d), self.d):
-        #     self.clases.append({'dia': self.d[j], 'hora': self.h[i], 'link': self.l[i]})
-
-        for i in self.d:
-            print(i)
-                    # self.clases.append({'dia': self.d[j], 'hora': self.h[i], 'link': self.l[i]})
 
 
-
-    def run(self):#Ejecutador🗡
-        webbrowser.open(self.l, new=0, autoraise=True)#Abre el link de zoom en el navegador
+    def run(self, index):#Ejecutador🗡
+        webbrowser.open(self.l[index], new=0, autoraise=True)#Abre el link de zoom en el navegador
         ok = True
-        print( f'Comenzando clase de {self.m} con il professeur {self.p}')
-        time.sleep(60)
+        # print( f'Comenzando clase de {self.m} con il professeur {self.p}')
+        time.sleep(3200)
         start()
 
 #----------------------------------------------------Horario De Las Materias -------------------------------------------------#
@@ -56,7 +37,7 @@ Introduccion_Economia = Materias([2,4], ['07:28_AM', '07:28_AM'], 'Jana Schmutzl
 Calculo_1 = Materias([2,4], ['02:28_PM', '02:28_PM'], 'German E Jimenez Blanco', 'Calculo 1', ['83760728826', '83760728826'])
 Ingles_8 = Materias([3,4,5], ['04:28_PM', '04:28_PM', '04:28_PM'], 'Por designar', 'Inglés VII', ['88024604860', '82184968943', '82700208528'])
 Literatura_Hispanica = Materias([3], ['09:28_AM'], 'Ernesto Camacho Ocampo', 'Literatura Hispanica', ['81275564581'])
-# Proyecto_Vida = Materias([5], ['10:28_AM'], 'Elkin Cabrera Vergara', 'Taller Universitario - Proyecto de Vida', ['81275564581'])
+Proyecto_Vida = Materias([5], ['10:28_AM'], 'Elkin Cabrera Vergara', 'Taller Universitario - Proyecto de Vida', ['81275564581'])
 
 Todas_las_Clases = [Competencias_Comunicativas_1, Introduccion_Economia, Calculo_1, Ingles_8, Literatura_Hispanica]
 
@@ -72,8 +53,18 @@ def start():
         
         # iterate trough Todas_Las_Clases and if a weekday and hour is correct,  run the method run
 
-
-
+    # make a for trough todas_las_clases
+        for i in Todas_las_Clases:
+        if weekday == i.d[0] and i.h[0] == today.strftime('%H:%M_%p'):
+            i.run()
+        if i.d.len() == 1:
+            if weekday == i.d[1] and i.h[1] == today.strftime('%H:%M_%p'):
+                i.run()
+        else: 
+            if weekday == i.d[2] and i.h[2] == today.strftime('%H:%M_%p'):
+                i.run()
+    
+        time.slee(40)
 
     if weekday == 0 or weekday == 6:
             time.sleep(32000)
