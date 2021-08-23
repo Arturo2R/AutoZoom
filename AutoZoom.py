@@ -15,17 +15,11 @@ class Materias:
         self.p = profesor
         self.m = materia
         self.i = id_reunion
-        
-
 
     def run(self, index):#Ejecutador🗡
-        print('ya papito')
-        print(index)
         id = str(self.i[index])
         webbrowser.open(f"https://uninorte.zoom.us/j/{id}?uname=Arturo+David+Rebolledo+Rosenstiehl#success", new=0, autoraise=True)#Abre el link de zoom en el navegador
-        ok = True
-        # print( f'Comenzando clase de {self.m} con il professeur {self.p}')
-        time.sleep(3200)
+        time.sleep(3400)
         start()
 
 #----------------------------------------------------Horario De Las Materias -------------------------------------------------#
@@ -38,7 +32,7 @@ Ingles_8 = Materias([3,4,5], ['16:28_PM', '16:28_PM', '16:28_PM'], 'Por designar
 Literatura_Hispanica = Materias([3], ['09:28_AM'], 'Ernesto Camacho Ocampo', 'Literatura Hispanica', [81275564581])
 Proyecto_Vida = Materias([5], ['10:28_AM'], 'Elkin Cabrera Vergara', 'Taller Universitario - Proyecto de Vida', [81275564581])
 
-Todas_las_Clases = [Competencias_Comunicativas_1, Introduccion_Economia, Calculo_1, Ingles_8, Literatura_Hispanica]
+Todas_las_Clases = [Competencias_Comunicativas_1, Introduccion_Economia, Calculo_1,salsa, Ingles_8, Literatura_Hispanica]
 
 #----------------------------------------------------Horario De Las Materias -------------------------------------------------#
 
@@ -48,24 +42,19 @@ def start():
     today = datetime.datetime.now()
     weekday = int(today.strftime('%w'))
     while weekday > 0 and weekday< 6:
-        weekday = int(today.strftime('%w'))
+
+        # Get the Hour in "14:20_PM" format
+        current = datetime.datetime.now().strftime('%H:%M_%p');
         
-        # iterate trough Todas_Las_Clases and if a weekday and hour is correct,  run the method run
-
-    # make a for trough todas_las_clases
-        print(today.strftime('%H:%M_%p'))
-
         for i in Todas_las_Clases:
-            print(weekday)
-            if weekday == i.d[0] and i.h[0] == today.strftime('%H:%M_%p'):
+            if weekday == i.d[0] and i.h[0] == current:
                 i.run(0)
             if len(i.d) == 2:
-                if weekday == i.d[1] and i.h[1] == today.strftime('%H:%M_%p'):
+                if weekday == i.d[1] and i.h[1] == current:
                     i.run(1)
             if len(i.d) == 3: 
-                if weekday == i.d[2] and i.h[2] == today.strftime('%H:%M_%p'):
+                if weekday == i.d[2] and i.h[2] == current:
                     i.run(2)
-        print('un ciclo')
         time.sleep(40)
 
     if weekday == 0 or weekday == 6:
