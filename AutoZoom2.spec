@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['AutoZoom.py'],
-             pathex=['C:\Users\Elray\OneDrive\Programas\AutoZoom-1'],
+             pathex=['C:\\Users\\Elray\\OneDrive\\Programas\\AutoZoom-1'],
              binaries=[],
              datas=[('favicon.ico', 'ico')],
              hiddenimports=['plyer.platforms.win.notification'],
@@ -24,7 +24,7 @@ exe = EXE(pyz,
           a.scripts, 
           [],
           exclude_binaries=True,
-          name='AutoZoom',
+          name='AutoZoom2',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -41,4 +41,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='AutoZoom')
+               name='AutoZoom2')

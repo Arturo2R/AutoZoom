@@ -1,0 +1,1 @@
+pyinstaller -n AutoZoom2 --add-data "favicon.ico;ico" --hidden-import "plyer.platforms.win.notification" -w -i favicon.ico AutoZoom.py

@@ -4,8 +4,8 @@
 block_cipher = None
 
 
-a = Analysis(['__pycache__/AutoZoom.cpython-38.opt-1.pyc'],
-             pathex=['/mnt/c/Users/Elray/OneDrive/Programas/AutoZoom-1'],
+a = Analysis(['..\\.AutoZoom.py'],
+             pathex=['.AutoZoom.spec'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -24,7 +24,7 @@ exe = EXE(pyz,
           a.scripts, 
           [],
           exclude_binaries=True,
-          name='AutoZoom.cpython-38.opt-1',
+          name='.AutoZoom',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -41,4 +41,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='AutoZoom.cpython-38.opt-1')
+               name='.AutoZoom')
